@@ -1,0 +1,104 @@
+#include <iostream>
+#include <string.h>
+#include <vector>
+#include "Classroom.h"
+
+using namespace std;
+
+int StudentAgeSetter(int a1, int a2, int a3, int a4){
+		cout << " You will now be prompted for student information" << endl;
+		
+		cout << "What is the age of your first student?" << endl;
+			cin >> a1;
+		
+		cout << "What is the age of your second student?" << endl;
+			cin >> a2;
+			
+		cout << "What is the age of your third student?" << endl;
+			cin >> a3;
+			
+		cout << "What is the age of your fourth student?" << endl;
+			cin >> a4;
+			
+			return a1, a2, a3, a4;
+}
+
+string StudentNameSetter( string b1, string b2, string b3, string b4){
+		cout << "You will now be prompted for student information" << endl;
+			
+		cout << "What is the name of your second student?" << endl;
+			cin >> b1;
+			
+		cout << "What is the name of your second student?" << endl;
+			cin >> b2;
+			
+		cout << "What is the name of your third student?" << endl;
+			cin >> b3;
+			
+		cout << "What is the name of your fourth student?" << endl;
+			cin >> b4;
+			
+		return b1, b2, b3, b4;
+}
+
+int main(){
+		vector<Classroom> VecRoom;
+		
+			Classroom Stu1;
+			Classroom Stu2;
+			Classroom Stu3;
+			Classroom Stu4;
+			
+			int age1, age2, age3, age4;
+			string name1, name2, name3, name4, answer;
+			
+			age1 = 0;
+			age2 = 0;
+			age3 = 0;
+			age4 = 0;
+			
+			int StudentAgeSetter(age1, age2, age3, age4);
+			
+			string StudentNameSetter(name1, name2, name3, nam4);
+			
+			Stu1.setName(name1);
+			Stu1.setAge(age1);
+			
+			Stu2.setName(name2);
+			Stu2.setAge(age2);
+			
+			Stu3.setName(name3);
+			Stu3.setAge(age3);
+			
+			Stu4.setName(name4);
+			Stu4.setAge(age4);
+			
+			VecRoom.push_back(Stu1);
+			VecRoom.push_back(Stu2);
+			VecRoom.push_back(Stu3);
+			VecRoom.push_back(Stu4);
+			
+			cout << "Would you like to print this vector? '(yes/no)' " << endl;
+				cin >> answer;
+				
+			if(answer == "yes"){
+				for(int i=0; i< VecRoom.size();i++){
+					cout << "This student's age is:  " << VecRoom[i].getAge() << " and their name is: " << VecRoom[i].getName() << endl;
+				}
+				system("pause")
+			}
+			
+			else if(answer == "no"){
+				cout << "Have a nice day" << endl;
+				system("pause);
+				return 0;
+			}
+			
+			else{
+				cout << "Learn to read" << endl;
+				system("pause);
+				return 0;
+				}
+				
+
+}
